@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 
 var yChange = 2;
 var xChange = 1;
-this.gravity = 10;
+this.gravity = 0.2;
 this.gravitySpeed = 0;
 
 var rainPosX = [];
@@ -19,13 +19,6 @@ var Run = function(){
         // Start the first frame request
         window.requestAnimationFrame(gameLoop);
     }
-    function createGradient() {
-        var gr = ctx.createLinearGradient(0, 0, 500, 0);               // create gradient
-        gr.addColorStop(0, "hsl(" + (angleA % 360) + ",100%, 50%)");   // start color
-        gr.addColorStop(1, "hsl(" + (angleB % 360) + ",100%, 50%)");   // end color
-        ctx.fillStyle = gr;                                            // set as fill style
-        ctx.fillRect(0, 0, 500, 150);                                  // fill area
-      }
 
 
     function draw(){
@@ -50,13 +43,10 @@ var Run = function(){
 //#FFB582
     let colorInc =0;
     function gameLoop(timeStamp) {
-        createGradient();
-  ctx.clearRect(8,8,484,134);
-  // =========> DRAW YOUR FRONT OBJECTS HERE <=========
-  ctx.fillRect(0, 0, canvas.width, canvas.height);//clear display
-  angleA += stepA;                                               // increase angles
-  angleB += stepB;
 
+ctx.fillStyle = "#FFFFFF";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);//clear display
+ 
 
 
         //ctx.fillStyle = `#${colorInc.toString(16)}`; 
