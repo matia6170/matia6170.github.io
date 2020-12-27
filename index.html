@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="/main.css">
+  <include file="include_head.html">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script> 
+      $(function(){
+        $("#header").load("/hf/header.html?",function(){
+          $("#home").addClass('active');
+        });
+   
+        $("#footer").load("/hf/footer.html"); 
+      });
+    </script> 
 
 </head>
-<body><!--onload="getResults('Jeju')"-->
-    <div class="app-wrap">
-        <header>
-            <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..."/>
-        </header>
-        <main>
-            <section class="location">
-                <div class="city">City, Country Code</div>
-                <div class="date">Day Date Month Year</div>
-            </section>
-            <div class="current">
-                <div class="temp">Deg<span>°C</span></div>
-                <div class="weather">Weather</div>
-                <img class="icon" src="http://openweathermap.org/img/wn/10d@2x.png" height="100" width="50">
-                <div class="hi-low">Low°C / Max°C</div>
-            </div>
-        </main>
-    </div>
-    
-    <script src="main.js"></script>
+
+<body>
+  <h1>matia6170</h1>
+  <div id="header" style="border:none"></div>
+  
+  <!--Remaining section-->
+  <p>aaa</p>
+  
+
+
+<h3 id="test">Dropdown Menu inside a Navigation Bar</h3>
+<p>Hover over the "Dropdown" link to see the dropdown menu.</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>a</p>
+  
 </body>
+
+<div id="footer"></div>
+
 </html>

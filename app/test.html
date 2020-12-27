@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script> 
+        $(function(){
+          $("#header").load("/hf/header.html?",function(){
+            $("#dropdownProj").addClass('active');
+            $("#test").addClass('active');
+          });
+     
+          $("#footer").load("/hf/footer.html"); 
+        });
+      </script> 
+
+    <style>
+        #screen{
+            border:1px solid #c3c3c3;
+            
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+  <!--Remaining section-->
+  <h1>HELLO SECOND PAGE!!!</h1>
+
+  <canvas id="screen" width=window.innerWidth height=window.innerHeight></canvas>
+
+  <div id="footer"></div>
+
+    
+  <script src="/scripts/test.js"></script>
+</body>
+</html>
