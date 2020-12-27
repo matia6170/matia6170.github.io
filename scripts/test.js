@@ -120,22 +120,6 @@ function gameLoop(timeStamp) {
     ctx.fillStyle = 'black';
     ctx.fillText("FPS: " + fps, 10, 30);
 
-    //displays the rain coords
-    ctx.font = "10px Georgia";
-    let temp =[];
-    for(i = 0; i < rainPosY.length; i++){
-        temp.push(Math.round(rainPosY[i]));
-    }
-    ctx.fillText(temp, 10,40)
-
-     temp =[];
-    for(i = 0; i < rainPosX.length; i++){
-        temp.push(Math.round(rainPosX[i]));
-    }
-    ctx.fillText(temp, 10,50)
-
-    //display current speed
-    ctx.fillText(gravitySpeed, 10,60)
 
 
     // Perform the drawing operation
