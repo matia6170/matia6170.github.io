@@ -1,5 +1,5 @@
 body { 
-    padding-top: 65px; 
+    padding-top: 50px; 
 }
 ul {
     
@@ -60,7 +60,7 @@ li.dropdown {
     display: block;
   }
   
-  .menu .active {
-    background-color:#4CAF50;
-    color: #FFF;
-  }
+.menu .active {
+  background-color:#4CAF50;
+  color: #FFF;
+}

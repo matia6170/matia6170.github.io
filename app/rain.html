@@ -17,12 +17,23 @@
           $("#footer").load("/hf/footer.html"); 
         });
       </script> 
+          <style>
+            #screen{
+                border:1px solid #c3c3c3;
+                
+                margin: 0;
+            }
+            body{
+              margin: 0;
+            }
+        </style>
 </head>
 <body>
     <div id="header"></div>
-    <!--Remaining section-->
+    <canvas id="screen"></canvas>
     <h1>rain</h1>
     <div id="footer"></div>
+    <script src="/scripts/rain.js"></script>
     
 </body>
 </html>
