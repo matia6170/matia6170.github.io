@@ -16,6 +16,7 @@ var rainPosY = [100, 100, 100, 100, 100, 200];
 
 
 function drawRains(posArrX, posArrY) {
+    ctx.strokeStyle = '#ffffff';
     ctx.beginPath();
     for(i = 0; i < posArrX.length; i++){
         ctx.moveTo(posArrX[i], posArrY[i]);
@@ -55,7 +56,7 @@ $(document).on("keypress", function (e) {
        //gravitySpeed=0;
 
        
-        addRain(Math.floor(Math.random() * canvas.width), 100);
+        addRain(Math.floor(Math.random() * canvas.width), 0);
        
     }
 });
@@ -76,16 +77,12 @@ function draw(){
         gravitySpeed=9.8;
     }
 
-    ctx.beginPath();
-    ctx.arc(value*2, 75, 50, 0, 2 * Math.PI);
-    ctx.stroke();
-
     drawRains(rainPosX, rainPosY);
     updateRainPos();
 
-    value++;
-    
-    addRain(Math.floor(Math.random() * canvas.width), 100);
+
+    //create random raindrops
+    addRain(Math.floor(Math.random() * (canvas.width+200))-300, 0);
 }
 
 window.onload = init;
@@ -103,10 +100,10 @@ let oldTimeStamp;
 let fps;
 
 function gameLoop(timeStamp) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height,false);//clear display
+    ctx.fillRect(0, 0, canvas.width, canvas.height,false);//clear display
 
 
-    // Calculate the number of seconds passed since the last frame
+/*     // Calculate the number of seconds passed since the last frame
     secondsPassed = (timeStamp - oldTimeStamp) / 1000;
     oldTimeStamp = timeStamp;
 
@@ -119,7 +116,7 @@ function gameLoop(timeStamp) {
     ctx.font = '25px Arial';
     ctx.fillStyle = 'black';
     ctx.fillText("FPS: " + fps, 10, 30);
-
+ */
 
 
     // Perform the drawing operation
