@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://latex.now.sh/style.css" />
+    <link rel="stylesheet" href="https://latex.now.sh/prism/prism.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+  </head>
+  
+  <script>
+    $(document).ready(function () {
+      $.getJSON("blog/posts.json", function (posts) {
+        const $list = $("#blog-list ul").empty(); // Select the UL and clear the loading message
+        $.each(posts, function (i, post) {
+          $("<li>")
+            .append(
+              $("<a>", {
+                href: "blog/" + post.file,
+                text: post.title,
+              })
+            )
+            .appendTo($list); // Append the list item to the UL
+        });
+      }).fail(function () {
+        console.error("Error fetching blog posts");
+        $("#blog-list ul").text("Failed to load blog posts."); // Show error inside the UL
+      });
+    });
+  </script>
+
+  <body class="latex-dark">
+    <header>
+      <h1>matia choi</h1>
+      <p class="author">
+        Matia Choi<br />
+        Mar 2024
+      </p>
+    </header>
+    <div class="abstract">
+      <h2>Abstract</h2>
+      <p>Hi! My name is Matia Choi.</p>
+    </div>
+    <h2>Recent Posts</h2>
+    <div id="blog-list">
+      <ul>
+        Loading blog posts...
+      </ul>
+    </div>
+    <h2>Contents</h2>
+  </body>
+</html>
