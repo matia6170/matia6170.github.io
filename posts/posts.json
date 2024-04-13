@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Template",
+    "description": "",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "template.html",
+    "date": "01/01/2024",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": false
+  },
+  {
+    "title": "STM32 BMP180 Driver",
+    "description": "I2C driver for the BMP180 sensor from scratch.",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "stm32-bmp180-driver.html",
+    "date": "01/09/2024",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": true
+  },
+  {
+    "title": "Snipping Tool Saver for Windows 10",
+    "description": "Visual Basic Script for saving Snipping Tool screenshots.",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "template.html",
+    "date": "01/08/2024",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": false
+  },
+  {
+    "title": "Custom STM32 Dev Board",
+    "description": "Custom STM32 Dev Board with KiCAD.",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "template.html",
+    "date": "01/07/2024",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": true
+  },
+  {
+    "title": "PWM with STM32",
+    "description": "Testing PWM functionality with STM32",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "template.html",
+    "date": "01/07/2024",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": false
+  },
+  {
+    "title": "Using counterfeit STM32 Bluepills with STM32CubeMX",
+    "description": "Using counterfeit STM32 Bluepills with STM32CubeMX.",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "template.html",
+    "date": "01/01/2024",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": false
+  },
+  {
+    "title": "A Simple 3D Engine",
+    "description": "A ridiculously 3D Engine",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "template.html",
+    "date": "12/26/2023",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": false
+  },
+  {
+    "title": "Training on the MINIST Dataset",
+    "description": "Traning on the MNIST Dataset using tensorflow.",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "template.html",
+    "date": "12/26/2023",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": false
+  },
+  {
+    "title": "Bluetooth Caller",
+    "description": "Bluetooth calling device.",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "template.html",
+    "date": "08/16/2023",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": false
+  },
+  {
+    "title": "Driving Straight with PID",
+    "description": "PID robot built using an Arudino",
+    "featuredImage": "/images/posts/postname/featured.jpg",
+    "file": "template.html",
+    "date": "07/31/2023",
+    "tags": ["default"],
+    "status": "working",
+    "favorite": false
+  }
+]

@@ -6,51 +6,139 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://latex.now.sh/style.css" />
     <link rel="stylesheet" href="https://latex.now.sh/prism/prism.css" />
+    <link rel="stylesheet" href="/styles/post_list.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
   </head>
-  
-  <script>
-    $(document).ready(function () {
-      $.getJSON("blog/posts.json", function (posts) {
-        const $list = $("#blog-list ul").empty(); // Select the UL and clear the loading message
-        $.each(posts, function (i, post) {
-          $("<li>")
-            .append(
-              $("<a>", {
-                href: "blog/" + post.file,
-                text: post.title,
-              })
-            )
-            .appendTo($list); // Append the list item to the UL
-        });
-      }).fail(function () {
-        console.error("Error fetching blog posts");
-        $("#blog-list ul").text("Failed to load blog posts."); // Show error inside the UL
-      });
-    });
-  </script>
 
   <body class="latex-dark">
     <header>
       <h1>matia choi</h1>
       <p class="author">
-        Matia Choi<br />
-        Mar 2024
+        <!-- Matia Choi<br /> -->
+        <a href="mailto:hyunwoo6@illinois.edu">hyunwoo6@illinois.edu</a><br />
+        Champaign, IL | Pleasanton, CA <br />
+
+        <a href="https://www.linkedin.com/in/matiachoi">LinkedIn</a> |
+        <a href="https://github.com/matia6170">GitHub</a>
       </p>
     </header>
     <div class="abstract">
-      <h2>Abstract</h2>
-      <p>Hi! My name is Matia Choi.</p>
+      <h2>About Me</h2>
+      <p>
+        Hi, my name is Matia Choi. I’m studying Computer Engineering at the
+        University of Illinois Urbana-Champaign. I am interested in embedded
+        systems and robotics. My fascination with embedded systems and robotics
+        stems from a passion for transforming innovative ideas into tangible
+        solutions that can improve everyday life. I've had the opportunity to
+        work on several projects, including robot simulation in Tran Research
+        Group, building a graphics card on an FPGA board, and building my own
+        STM32 dev board, which deepened my understanding and skills in embedded
+        systems and robotics. I'm proficient in C/C++, python, ROS, Fusion 360,
+        STM32, KiCAD, and more. I'm eager to explore opportunities in summer
+        internships and research, where I can contribute my expertise and
+        continue to grow professionally.
+      </p>
     </div>
-    <h2>Recent Posts</h2>
-    <div id="blog-list">
-      <ul>
-        Loading blog posts...
-      </ul>
+    <p>
+      Find my <b>resume</b>
+      <a
+        href="https://docs.google.com/document/d/1y-ZBGVaGdk34CGtXy-2fq8h1a-wKXBTh-StFITZXjIs/edit?usp=sharing"
+        >HERE</a
+      >.
+    </p>
+    <!-- <button id="dark-mode-toggle">Toggle dark mode</button> -->
+    <div>
+      <h2>Recent Posts</h2>
+      <div id="post-list">
+        <ul>
+          Loading blog posts...
+        </ul>
+      </div>
+
+      <h2>My Favorite Posts</h2>
+      <div id="fav-post-list">
+        <ul>
+          Loading blog posts...
+        </ul>
+      </div>
+      <a>All Posts</a>
     </div>
-    <h2>Contents</h2>
+
+    <!-- <nav>
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="">Education</a></li>
+        <li><a href="">Experience</a></li>
+      </ol>
+    </nav> -->
+
+    <hr />
+    <h2 id="contacts">Contacts</h2>
+    <a href="mailto:hyunwoo6@illinois.edu">hyunwoo6@illinois.edu</a>
   </body>
+
+  <script>
+    $(document).ready(function () {
+      $.getJSON("posts/posts.json", function (posts) {
+        const $list = $("#post-list ul").empty(); // Select the UL and clear the loading message
+        const $favList = $("#fav-post-list ul").empty(); // Select the UL and clear the loading message
+
+        $.each(posts, function (i, post) {
+          // Create the list item with post title, date, and description
+          $("<li>")
+            .append(
+              $("<a>", {
+                href: "posts/" + post.file,
+                text: post.title,
+              })
+            )
+            .append(
+              $("<span>", {
+                text: "- " + post.date,
+                class: "post-date",
+              })
+            )
+            .append(
+              $("<p>", {
+                text: post.description,
+                class: "post-description",
+              })
+            )
+            .appendTo($list); // Append the list item to the UL
+          if (post.favorite == true) {
+            $("<li>")
+              .append(
+                $("<a>", {
+                  href: "posts/" + post.file,
+                  text: post.title,
+                })
+              )
+              .append(
+                $("<span>", {
+                  text: "- " + post.date,
+                  class: "post-date",
+                })
+              )
+              .append(
+                $("<p>", {
+                  text: post.description,
+                  class: "post-description",
+                })
+              )
+              .appendTo($favList); // Append the list item to the UL
+          }
+        });
+      }).fail(function () {
+        console.error("Error fetching blog posts");
+        $("#post-list ul").text("Failed to load blog posts."); // Show error inside the UL
+      });
+    });
+
+    $("#dark-mode-toggle").click(function () {
+      $("body").toggleClass("latex-dark");
+    });
+  </script>
 </html>
