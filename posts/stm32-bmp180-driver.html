@@ -3,28 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STM32 BMP180 Driver</title>
-    <link rel="stylesheet" href="https://latex.now.sh/style.css" />
-
+    <title>STM32 BMP180 Driver · Matia Choi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/vs.min.css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/github.min.css"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/github-dark.min.css"
+      media="(prefers-color-scheme: dark)"
     />
     <script
       src="https://cdn.jsdelivr.net/npm/@heppokofrontend/html-code-block-element/lib/html-code-block-element.common.min.js"
       defer
     ></script>
   </head>
-  <body class="latex-dark">
-    <header>
-      <h1>STM32 BMP180 Driver</h1>
-      <center><a href="/">Home</a> <a href="/#contacts">Contacts</a></center>
+  <body>
+    <div class="container">
+      <nav class="site-nav">
+        <a class="brand" href="/">matia choi</a>
+        <div class="links">
+          <a href="/#posts">Posts</a>
+          <a href="/#contact">Contact</a>
+        </div>
+      </nav>
 
-      <p class="author">
-        Matia Choi<br />
-        Dec 2023
-      </p>
-    </header>
+      <article>
+        <header class="post-header">
+          <h1>STM32 BMP180 Driver</h1>
+          <time datetime="2023-12">Dec 2023</time>
+        </header>
     <h2>Introduction</h2>
     <p>
       I wrote a driver for the BMP180 sensor which is a precise digital
@@ -93,7 +109,7 @@
     </p>
 
     <h2>Setting up STM32CubeMX</h2>
-    <img src="../images/posts/stm32-bmp180-driver/1-16-2024-61656 PM.webp" />
+    <img src="../images/posts/stm32-bmp180-driver/1-16-2024-61656 PM.webp" alt="STM32CubeMX I2C configuration" />
 
     <h2>Writing the header file</h2>
     <h3>Defines</h3>
@@ -120,7 +136,6 @@
       the global memory map shows us all the data registers and their addresses.
       Which I have defined in my header files.
     </p>
-  </body>
   <code-block language="c">
     <pre>
 typedef enum {
@@ -500,4 +515,11 @@ HAL_StatusTypeDef BMP180_WriteReg(BMP180 *device, uint8_t reg_addr, uint8_t *dat
 </pre
     >
   </code-block>
+      </article>
+
+      <footer class="site-footer">
+        <a href="/">← Back home</a>
+      </footer>
+    </div>
+  </body>
 </html>
