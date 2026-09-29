@@ -3,142 +3,148 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="https://latex.now.sh/style.css" />
-    <link rel="stylesheet" href="https://latex.now.sh/prism/prism.css" />
-    <link rel="stylesheet" href="/styles/post_list.css" />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <title>Matia Choi</title>
+    <meta
+      name="description"
+      content="Matia Choi — Computer Engineering at UIUC. Embedded systems and robotics."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
   </head>
 
-  <body class="latex-dark">
-    <header>
-      <h1>matia choi</h1>
-      <p class="author">
-        <!-- Matia Choi<br /> -->
-        <a href="mailto:hyunwoo6@illinois.edu">hyunwoo6@illinois.edu</a><br />
-        Champaign, IL | Pleasanton, CA <br />
+  <body>
+    <div class="container">
+      <nav class="site-nav">
+        <a class="brand" href="/">matia choi</a>
+        <div class="links">
+          <a href="#posts">Posts</a>
+          <a
+            href="https://docs.google.com/document/d/1y-ZBGVaGdk34CGtXy-2fq8h1a-wKXBTh-StFITZXjIs/edit?usp=sharing"
+            >Resume</a
+          >
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
 
-        <a href="https://www.linkedin.com/in/matiachoi">LinkedIn</a> |
-        <a href="https://github.com/matia6170">GitHub</a>
-      </p>
-    </header>
-    <div class="abstract">
-      <h2>About Me</h2>
-      <p>
-        Hi, my name is Matia Choi. I’m studying Computer Engineering at the
-        University of Illinois Urbana-Champaign. I am interested in embedded
-        systems and robotics. My fascination with embedded systems and robotics
-        stems from a passion for transforming innovative ideas into tangible
-        solutions that can improve everyday life. I've had the opportunity to
-        work on several projects, including robot simulation in Tran Research
-        Group, building a graphics card on an FPGA board, and building my own
-        STM32 dev board, which deepened my understanding and skills in embedded
-        systems and robotics. I'm proficient in C/C++, python, ROS, Fusion 360,
-        STM32, KiCAD, and more. I'm eager to explore opportunities in summer
-        internships and research, where I can contribute my expertise and
-        continue to grow professionally.
-      </p>
-    </div>
-    <p>
-      Find my <b>resume</b>
-      <a
-        href="https://docs.google.com/document/d/1y-ZBGVaGdk34CGtXy-2fq8h1a-wKXBTh-StFITZXjIs/edit?usp=sharing"
-        >HERE</a
-      >.
-    </p>
-    <!-- <button id="dark-mode-toggle">Toggle dark mode</button> -->
-    <div>
-      <h2>Recent Posts</h2>
-      <div id="post-list">
-        <ul>
-          Loading blog posts...
+      <header class="hero">
+        <h1>Hi, I'm Matia.</h1>
+        <p class="tagline">
+          Computer Engineering at UIUC. I build embedded systems and robots.
+        </p>
+        <div class="meta">
+          <a href="mailto:hyunwoo6@illinois.edu">hyunwoo6@illinois.edu</a>
+          <a href="https://github.com/matia6170">GitHub</a>
+          <a href="https://www.linkedin.com/in/matiachoi">LinkedIn</a>
+          <span class="muted">Champaign, IL · Pleasanton, CA</span>
+        </div>
+      </header>
+
+      <section>
+        <h2>About</h2>
+        <p>
+          I'm studying Computer Engineering at the University of Illinois
+          Urbana-Champaign, with a focus on embedded systems and robotics. I
+          love turning ideas into hardware that actually works.
+        </p>
+        <p>
+          Recent projects include robot simulation with the Tran Research
+          Group, a graphics card on an FPGA, and a custom STM32 dev board. I
+          work mostly in C/C++, Python, ROS, STM32, KiCAD, and Fusion 360, and
+          I'm looking for summer internship and research opportunities.
+        </p>
+      </section>
+
+      <section id="favorites-section" hidden>
+        <h2>Featured</h2>
+        <ul class="post-list" id="fav-post-list"></ul>
+      </section>
+
+      <section id="posts">
+        <h2>Posts</h2>
+        <ul class="post-list" id="post-list">
+          <li class="muted">Loading posts…</li>
         </ul>
-      </div>
+      </section>
 
-      <h2>My Favorite Posts</h2>
-      <div id="fav-post-list">
-        <ul>
-          Loading blog posts...
-        </ul>
-      </div>
-      <a>All Posts</a>
+      <hr />
+
+      <footer class="site-footer" id="contact">
+        <p>
+          Say hi at
+          <a href="mailto:hyunwoo6@illinois.edu">hyunwoo6@illinois.edu</a>.
+        </p>
+        <p>© Matia Choi</p>
+      </footer>
     </div>
 
-    <!-- <nav>
-      <h2>Contents</h2>
-      <ol>
-        <li><a href="">Education</a></li>
-        <li><a href="">Experience</a></li>
-      </ol>
-    </nav> -->
+    <script>
+      function parseDate(mmddyyyy) {
+        const [m, d, y] = mmddyyyy.split("/").map(Number);
+        return new Date(y, m - 1, d);
+      }
 
-    <hr />
-    <h2 id="contacts">Contacts</h2>
-    <a href="mailto:hyunwoo6@illinois.edu">hyunwoo6@illinois.edu</a>
-  </body>
-
-  <script>
-    $(document).ready(function () {
-      $.getJSON("posts/posts.json", function (posts) {
-        const $list = $("#post-list ul").empty(); // Select the UL and clear the loading message
-        const $favList = $("#fav-post-list ul").empty(); // Select the UL and clear the loading message
-
-        $.each(posts, function (i, post) {
-          // Create the list item with post title, date, and description
-          $("<li>")
-            .append(
-              $("<a>", {
-                href: "posts/" + post.file,
-                text: post.title,
-              })
-            )
-            .append(
-              $("<span>", {
-                text: "- " + post.date,
-                class: "post-date",
-              })
-            )
-            .append(
-              $("<p>", {
-                text: post.description,
-                class: "post-description",
-              })
-            )
-            .appendTo($list); // Append the list item to the UL
-          if (post.favorite == true) {
-            $("<li>")
-              .append(
-                $("<a>", {
-                  href: "posts/" + post.file,
-                  text: post.title,
-                })
-              )
-              .append(
-                $("<span>", {
-                  text: "- " + post.date,
-                  class: "post-date",
-                })
-              )
-              .append(
-                $("<p>", {
-                  text: post.description,
-                  class: "post-description",
-                })
-              )
-              .appendTo($favList); // Append the list item to the UL
-          }
+      function formatDate(date) {
+        return date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
         });
-      }).fail(function () {
-        console.error("Error fetching blog posts");
-        $("#post-list ul").text("Failed to load blog posts."); // Show error inside the UL
-      });
-    });
+      }
 
-    $("#dark-mode-toggle").click(function () {
-      $("body").toggleClass("latex-dark");
-    });
-  </script>
+      function renderPost(post) {
+        const li = document.createElement("li");
+        const body = document.createElement("div");
+        const published = post.file && post.file !== "template.html";
+
+        const title = document.createElement(published ? "a" : "span");
+        title.className = published ? "title" : "title soon";
+        title.textContent = post.title;
+        if (published) title.href = "posts/" + post.file;
+        body.appendChild(title);
+
+        if (post.description) {
+          const desc = document.createElement("span");
+          desc.className = "description";
+          desc.textContent = post.description;
+          body.appendChild(desc);
+        }
+
+        const date = parseDate(post.date);
+        const time = document.createElement("time");
+        time.dateTime = date.toISOString().slice(0, 10);
+        time.textContent = formatDate(date);
+
+        li.append(body, time);
+        return li;
+      }
+
+      fetch("posts/posts.json")
+        .then((res) => res.json())
+        .then((posts) => {
+          posts = posts
+            .filter((p) => p.title !== "Template")
+            .sort((a, b) => parseDate(b.date) - parseDate(a.date));
+
+          const list = document.getElementById("post-list");
+          list.replaceChildren(...posts.map(renderPost));
+
+          const favorites = posts.filter((p) => p.favorite);
+          if (favorites.length) {
+            document
+              .getElementById("fav-post-list")
+              .replaceChildren(...favorites.map(renderPost));
+            document.getElementById("favorites-section").hidden = false;
+          }
+        })
+        .catch(() => {
+          document.getElementById("post-list").innerHTML =
+            '<li class="muted">Failed to load posts.</li>';
+        });
+    </script>
+  </body>
 </html>
